@@ -1,5 +1,4 @@
 import React from 'react'
-import { View } from 'react-native'
 
 import { Text, Title, Button, Box, Spacer } from '../../components'
 
