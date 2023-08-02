@@ -6,13 +6,16 @@ export const Box = styled.View`
   overflow: hidden;
   flex: ${(props) => (props.height ? 'none' : 1)};
   width: ${(props) => (props.fluid ? '100%' : props.width || 'auto')};
+  max-width: ${(props) => (props.fluid ? '100%' : props.width || 'auto')};
   height: ${(props) => props.height || 'auto'};
+  max-height: ${(props) => props.height || 'auto'};
   margin: ${(props) => props.spacing || 0};
   flex-direction: ${(props) => (props.row ? 'row' : 'column')};
   justify-content: ${(props) => props.justify || 'flex-start'};
   align-items: ${(props) => props.align || 'flex-start'};
   padding: ${(props) => (props.hasPadding ? '20px' : '0px')};
   border-radius: ${(props) => props.radius || '0px'};
+  border: ${(props) => props.border || 'none'};
   background-color: ${(props) =>
     props.background
       ? colors[props.background] || props.background
