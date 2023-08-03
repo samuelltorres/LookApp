@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, Input, Spacer, Text, Title } from '../../components'
 import { StatusBar } from 'react-native'
 
-const SignIn = () => {
+export function SignIn() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -32,5 +32,3 @@ const SignIn = () => {
     </>
   )
 }
-
-export default SignIn

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Text, Title, Button, Box, Spacer } from '../../components'
 
-const Home = () => {
+export function Home() {
   return (
     <Box justify="center" hasPadding align="center" background="dark">
       <Box justify="center" align="center" fluid>
@@ -30,5 +30,3 @@ const Home = () => {
     </Box>
   )
 }
-
-export default Home

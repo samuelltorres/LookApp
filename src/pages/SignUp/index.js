@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, Input, Spacer, Text, Title } from '../../components'
 import { StatusBar } from 'react-native'
 
-const SignUp = () => {
+export function SignUp() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -34,5 +34,3 @@ const SignUp = () => {
     </>
   )
 }
-
-export default SignUp
