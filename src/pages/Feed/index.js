@@ -1,13 +1,18 @@
 import React from 'react'
-import { Box } from '../../components'
+import { Box, ScrollView, Spacer } from '../../components'
 import Header from '../../components/Header'
 import StoryList from '../../components/Story/list'
+import PostList from '../../components/Post/list'
 
 export function Feed() {
   return (
     <Box background="light">
       <Header title={'Explore'} />
-      <StoryList />
+      <ScrollView>
+        <StoryList />
+        <Spacer />
+        <PostList />
+      </ScrollView>
     </Box>
   )
 }
