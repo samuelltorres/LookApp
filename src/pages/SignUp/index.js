@@ -1,8 +1,11 @@
 import React from 'react'
 import { Box, Button, Input, Spacer, Text, Title } from '../../components'
 import { StatusBar } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 export function SignUp() {
+  const { navigate, goBack } = useNavigation()
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -22,13 +25,13 @@ export function SignUp() {
         <Input placeholder="Password" secureTextEntry />
 
         <Spacer size="50px" />
-        <Button block>
+        <Button block onPress={() => navigate('SignIn')}>
           <Text color="light">Create new account</Text>
         </Button>
 
         <Spacer size="30px" />
-        <Text color="gray50" underline onPress={() => {}}>
-          Back to signIn
+        <Text color="gray50" underline onPress={() => goBack()}>
+          Back
         </Text>
       </Box>
     </>
