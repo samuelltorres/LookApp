@@ -3,8 +3,11 @@ import { SafeAreaView, StatusBar } from 'react-native'
 import { Box, Title, Touchable } from '../../components'
 import { colors } from '../../styles/theme.json'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { useNavigation } from '@react-navigation/native'
 
 const Header = ({ title }) => {
+  const navigation = useNavigation()
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -21,7 +24,7 @@ const Header = ({ title }) => {
             width="90px"
             justify="center"
             align="center"
-            onPress={() => alert('test')}>
+            onPress={() => navigation.openDrawer()}>
             <Icon name="menu" size={30} />
           </Touchable>
 
