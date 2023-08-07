@@ -4,7 +4,7 @@ import { Box, Text } from '../../components/index'
 export default function Category() {
   return (
     <Box justify="center" align="center" background="light">
-      <Text>Product</Text>
+      <Text>Category</Text>
     </Box>
   )
 }

@@ -6,9 +6,13 @@ import {
   DrawerContentScrollView,
   DrawerItemList
 } from '@react-navigation/drawer'
-import { Home, Feed, SignIn, SignUp } from './pages/index'
-import Icon from 'react-native-vector-icons/SimpleLineIcons'
 
+import { Home, Feed, SignIn, SignUp } from './pages/index'
+import Marketplace from './pages/Marketplace'
+import Category from './pages/Marketplace/category'
+import Product from './pages/Marketplace/product'
+
+import Icon from 'react-native-vector-icons/SimpleLineIcons'
 import { colors } from './styles/theme.json'
 import util from './util.js'
 import { Title } from './components'
@@ -34,7 +38,7 @@ function DrawerComponent() {
       drawerContent={(props) => <CustomDrawerComponent {...props} />}
       screenOptions={{
         headerShown: false,
-        drawerActiveBackgroundColor: util.toAlpha(colors.primary, 60),
+        drawerActiveBackgroundColor: util.toAlpha(colors.primary, 80),
         drawerActiveTintColor: colors.light,
         drawerInactiveTintColor: util.toAlpha(colors.light, 60),
         drawerStyle: {
@@ -55,7 +59,7 @@ function DrawerComponent() {
           drawerIcon: ({ color }) => <Icon name="tag" color={color} size={28} />
         }}
         name="Marketplace"
-        component={Feed}
+        component={Marketplace}
       />
       <Drawer.Screen
         options={{
@@ -101,6 +105,20 @@ const Routes = () => {
           }}
           name="SignUp"
           component={SignUp}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false
+          }}
+          name="Category"
+          component={Category}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false
+          }}
+          name="Product"
+          component={Product}
         />
       </Stack.Navigator>
     </NavigationContainer>
