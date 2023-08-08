@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, Text } from '../../components'
+import { ScrollView, Text } from '..'
 import Category from '.'
 
 export default function CategoryList() {

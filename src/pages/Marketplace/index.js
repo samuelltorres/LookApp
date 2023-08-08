@@ -4,7 +4,7 @@ import Header from '../../components/Header'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { Touchable } from '../../components/index'
-import CategoryList from '../../components/Category/list'
+import CategoryList from '../../components/Categories/list'
 
 export default function Marketplace() {
   return (

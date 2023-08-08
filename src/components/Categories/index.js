@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
-import { Touchable, Cover, Title, Text, Spacer, Box } from '../'
+import { Touchable, Cover, Title, Text, Spacer, Box } from '..'
 
 import util from '../../util'
 import { colors } from '../../styles/theme.json'
