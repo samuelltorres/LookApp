@@ -5,7 +5,7 @@ import { StatusBar } from 'react-native'
 export function SignIn({ navigation: { navigate, replace } }) {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <Box background="light" justify="center" align="center" hasPadding>
         <Title bold variant="big">
           LOOKAPP

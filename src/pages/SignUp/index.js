@@ -8,7 +8,7 @@ export function SignUp() {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <Box background="light" justify="center" align="center" hasPadding>
         <Title color="dark" bold>
           Create new account.

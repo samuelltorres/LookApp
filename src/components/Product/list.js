@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, Text } from '..'
+import { ScrollView } from '..'
 import Product from '.'
 
 export default function ProductList() {

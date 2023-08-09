@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { Touchable } from '../../components/index'
 import CategoryList from '../../components/Categories/list'
+import { colors } from '../../styles/theme.json'
 
 export default function Marketplace() {
   return (
@@ -13,7 +14,7 @@ export default function Marketplace() {
         title="Categories"
         right={() => (
           <Touchable hasPadding width="70px" onPress={() => alert('teste')}>
-            <Icon name="shopping-outline" size={30} />
+            <Icon name="shopping-outline" size={28} color={colors.gray50} />
           </Touchable>
         )}
       />

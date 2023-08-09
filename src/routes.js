@@ -7,7 +7,7 @@ import {
   DrawerItemList
 } from '@react-navigation/drawer'
 
-import { Home, Feed, SignIn, SignUp } from './pages/index'
+import { Home, Feed, SignIn, SignUp, Cart } from './pages/index'
 import Marketplace from './pages/Marketplace'
 import Category from './pages/Marketplace/category'
 import Product from './pages/Marketplace/product'
@@ -77,7 +77,7 @@ function DrawerComponent() {
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Cart">
         <Stack.Screen
           options={{
             headerShown: false
@@ -119,6 +119,13 @@ const Routes = () => {
           }}
           name="Product"
           component={Product}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false
+          }}
+          name="Cart"
+          component={Cart}
         />
       </Stack.Navigator>
     </NavigationContainer>
