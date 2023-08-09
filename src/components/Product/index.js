@@ -2,31 +2,45 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Text, Touchable, Cover, Box, Spacer } from '../index'
 
-export default function Product({ cover, brand, title, price }) {
+export default function Product({
+  cover,
+  brand,
+  title,
+  price,
+  selected = false
+}) {
   const { navigate } = useNavigation()
 
   return (
     <Touchable
-      hasPadding
+      hasPadding={!selected}
       row
       background="light"
-      spacing="0 0 1px 0"
+      spacing={selected ? '5px 0' : '0 0 1px 0'}
       onPress={() => navigate('Product')}>
       <Cover width="80px" height="80px" image={cover} />
       <Box
-        hasPadding
         style={{
           paddingBottom: 0,
-          paddingTop: 0
+          paddingTop: 0,
+          paddingLeft: 20
         }}>
-        <Text color="dark">{brand}</Text>
+        {!selected && <Text color="dark">{brand}</Text>}
+
         <Text color="dark" bold>
           {title}
         </Text>
         <Spacer />
+
+        {selected && (
+          <Box>
+            <Text color="dark">Size: GG</Text>
+          </Box>
+        )}
+
         <Box row width="100%" justify="space-between">
           <Text color="dark">{price}</Text>
-          <Text color="danger">Add to cart</Text>
+          <Text color="danger">{selected ? 'remove' : 'Add to cart'}</Text>
         </Box>
       </Box>
     </Touchable>

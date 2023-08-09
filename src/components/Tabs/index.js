@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { ScrollView, Text, Touchable } from '../index'
+import { Box, ScrollView, Text, Touchable } from '../index'
 import { colors } from '../../styles/theme.json'
 
 const Tabs = ({ tabs = [], active = '', onChange = (tab) => {} }) => {
   const totalTabs = (tabs && tabs.length) || 0
   const activeTabStyle = {
-    borderBottomWidth: 3,
+    borderBottomWidth: 5,
     borderColor: colors.primary
   }
 
@@ -14,7 +14,7 @@ const Tabs = ({ tabs = [], active = '', onChange = (tab) => {} }) => {
     <ScrollView
       horizontal
       style={{
-        maxHeight: 70,
+        maxHeight: 60,
         backgroundColor: colors.light
       }}>
       {tabs?.map((tab) => (
@@ -26,13 +26,15 @@ const Tabs = ({ tabs = [], active = '', onChange = (tab) => {} }) => {
             {
               minWidth: `${100 / totalTabs}%`,
               alignItems: 'center',
-              paddingLeft: 75,
-              paddingRight: 75
+              paddingLeft: 77,
+              paddingRight: 78
             },
             active === tab.value ? activeTabStyle : {}
           ]}>
-          <Text color={active === tab.value ? 'primary' : undefined}>
-            {tab.label}
+          <Text
+            color={active === tab.value ? 'primary' : undefined}
+            variant="small">
+            {tab.label.toUpperCase()}
           </Text>
         </Touchable>
       ))}
