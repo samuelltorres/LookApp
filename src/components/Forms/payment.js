@@ -44,7 +44,12 @@ const PaymentForm = ({ onChange = () => {} }) => {
       <Box>
         <Title variant="small">Select and enter your payment details</Title>
         <Spacer />
-        <Text>By continuing you agree to our Terms</Text>
+        <Box row>
+          <Text color="dark">By continuing you agree to our </Text>
+          <Touchable>
+            <Text color="primary">Terms</Text>
+          </Touchable>
+        </Box>
         <Spacer size="20px" />
 
         <Input

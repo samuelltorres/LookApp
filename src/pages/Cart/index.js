@@ -4,16 +4,19 @@ import Header from '../../components/Header'
 import Tabs from '../../components/Tabs'
 import Product from '../../components/Product'
 import PaymentForm from '../../components/Forms/payment'
+import CongratsModal from '../../components/Modals/congrats'
 
 import { ScrollView, Box, Spacer, Title, Text, Button } from '../../components'
 import { colors } from '../../styles/theme.json'
 import util from '../../util'
 
 export function Cart() {
+  const [showCongrats, setShowCongrats] = useState(false)
   const [tab, setTab] = useState('payment')
 
   return (
     <>
+      {showCongrats && <CongratsModal />}
       <Header goBack title={tab === 'cart' ? 'Cart' : 'Payment'} />
       <Tabs
         tabs={[
@@ -121,11 +124,17 @@ export function Cart() {
             />
             <Spacer size="30px" />
 
-            <Button block onPress={() => {}}>
+            <Button
+              block
+              onPress={() => {
+                setShowCongrats(true)
+              }}>
               <Text color="light">Confirmation</Text>
             </Button>
           </>
         )}
+
+        <Spacer size="50px" />
       </ScrollView>
     </>
   )
