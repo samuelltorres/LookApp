@@ -80,7 +80,7 @@ export const Button = styled.TouchableOpacity`
   margin: ${(props) => props.spacing || 0};
   border-radius: 5px;
   padding: 13px 30px;
-  background: ${(props) => colors[props.background || 'primary']};
+  background: ${(props) => colors[props.background || 'danger']};
   width: ${(props) => (props.block ? '100%' : 'auto')};
   align-items: center;
 `

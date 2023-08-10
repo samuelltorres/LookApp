@@ -40,7 +40,7 @@ export default function Product({
 
         <Box row width="100%" justify="space-between">
           <Text color="dark">{price}</Text>
-          <Text color="danger">{selected ? 'remove' : 'Add to cart'}</Text>
+          <Text color="primary">{selected ? 'remove' : 'Add to cart'}</Text>
         </Box>
       </Box>
     </Touchable>

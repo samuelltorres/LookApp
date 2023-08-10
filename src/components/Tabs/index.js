@@ -7,7 +7,7 @@ const Tabs = ({ tabs = [], active = '', onChange = (tab) => {} }) => {
   const totalTabs = (tabs && tabs.length) || 0
   const activeTabStyle = {
     borderBottomWidth: 5,
-    borderColor: colors.primary
+    borderColor: colors.danger
   }
 
   return (
@@ -32,7 +32,7 @@ const Tabs = ({ tabs = [], active = '', onChange = (tab) => {} }) => {
             active === tab.value ? activeTabStyle : {}
           ]}>
           <Text
-            color={active === tab.value ? 'primary' : undefined}
+            color={active === tab.value ? 'danger' : undefined}
             variant="small">
             {tab.label.toUpperCase()}
           </Text>

@@ -3,15 +3,18 @@ import React, { useState } from 'react'
 import Header from '../../components/Header'
 import Tabs from '../../components/Tabs'
 import Product from '../../components/Product'
+import PaymentForm from '../../components/Forms/payment'
 
 import { ScrollView, Box, Spacer, Title, Text, Button } from '../../components'
+import { colors } from '../../styles/theme.json'
+import util from '../../util'
 
 export function Cart() {
-  const [tab, setTab] = useState('cart')
+  const [tab, setTab] = useState('payment')
 
   return (
     <>
-      <Header goBack title="Cart" />
+      <Header goBack title={tab === 'cart' ? 'Cart' : 'Payment'} />
       <Tabs
         tabs={[
           { label: 'Cart', value: 'cart' },
@@ -68,7 +71,57 @@ export function Cart() {
         )}
         {tab === 'payment' && (
           <>
-            <Title>Payment</Title>
+            <Spacer size="20px" />
+            <Box
+              row
+              width="100%"
+              justify="space-between"
+              style={{
+                borderBottomWidth: 0.5,
+                borderBottomColor: util.toAlpha(colors.muted, 50),
+                paddingBottom: 10
+              }}>
+              <Text color="dark" bold>
+                Shipping address
+              </Text>
+
+              <Text color="primary">Change</Text>
+            </Box>
+            <Spacer />
+            <Text color="dark">
+              Tiana Rosser, 4517 Washington Ave Manchester, Kentucky 39495
+              United States
+            </Text>
+
+            <Spacer size="30px" />
+
+            <Box
+              row
+              width="100%"
+              justify="space-between"
+              style={{
+                borderBottomWidth: 0.5,
+                borderBottomColor: util.toAlpha(colors.muted, 50),
+                paddingBottom: 10
+              }}>
+              <Text color="dark" bold>
+                Delivery details
+              </Text>
+
+              <Text color="primary">Change</Text>
+            </Box>
+            <Spacer />
+            <Text color="dark">Standard Delivery</Text>
+            <Text color="dark">Saturday 27 - Tuesday 30</Text>
+            <Text color="dark">Cost: $10</Text>
+
+            <Spacer size="30px" />
+            <PaymentForm />
+            <Spacer size="30px" />
+
+            <Button block onPress={() => {}}>
+              <Text color="light">Confirmation</Text>
+            </Button>
           </>
         )}
       </ScrollView>
