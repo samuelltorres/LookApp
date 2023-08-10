@@ -116,7 +116,9 @@ export function Cart() {
             <Text color="dark">Cost: $10</Text>
 
             <Spacer size="30px" />
-            <PaymentForm />
+            <PaymentForm
+              onChange={(creditCardData) => console.log(creditCardData)}
+            />
             <Spacer size="30px" />
 
             <Button block onPress={() => {}}>
