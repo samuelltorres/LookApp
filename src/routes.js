@@ -7,7 +7,7 @@ import {
   DrawerItemList
 } from '@react-navigation/drawer'
 
-import { Home, Feed, SignIn, SignUp, Cart } from './pages/index'
+import { Home, Feed, SignIn, SignUp, Cart, Orders } from './pages/index'
 import Marketplace from './pages/Marketplace'
 import Category from './pages/Marketplace/category'
 import Product from './pages/Marketplace/product'
@@ -34,11 +34,11 @@ const CustomDrawerComponent = (props) => {
 function DrawerComponent() {
   return (
     <Drawer.Navigator
-      initialRouteName="Feed"
+      initialRouteName="Orders"
       drawerContent={(props) => <CustomDrawerComponent {...props} />}
       screenOptions={{
         headerShown: false,
-        drawerActiveBackgroundColor: util.toAlpha(colors.primary, 80),
+        drawerActiveBackgroundColor: util.toAlpha(colors.danger, 80),
         drawerActiveTintColor: colors.light,
         drawerInactiveTintColor: util.toAlpha(colors.light, 60),
         drawerStyle: {
@@ -68,7 +68,7 @@ function DrawerComponent() {
           )
         }}
         name="Orders"
-        component={Feed}
+        component={Orders}
       />
     </Drawer.Navigator>
   )
@@ -77,7 +77,7 @@ function DrawerComponent() {
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Cart">
+      <Stack.Navigator initialRouteName="Feed">
         <Stack.Screen
           options={{
             headerShown: false
