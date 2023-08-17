@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StatusBar } from 'react-native'
 
 import { Text, Title, Button, Box, Spacer } from '../../components'
 
+import { AppContext } from '../../contexts/app'
+
 export function Home({ navigation }) {
+  const { name } = useContext(AppContext)
   return (
     <>
       <StatusBar barStyle="light-content" />
       <Box justify="center" hasPadding align="center" background="dark">
         <Box justify="center" align="center" fluid>
+          <Text>{name}</Text>
           <Title color="light" variant="big" bold>
             LOOKAPP
           </Title>

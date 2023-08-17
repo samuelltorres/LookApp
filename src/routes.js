@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -34,7 +35,7 @@ const CustomDrawerComponent = (props) => {
 function DrawerComponent() {
   return (
     <Drawer.Navigator
-      initialRouteName="Orders"
+      initialRouteName="Feed"
       drawerContent={(props) => <CustomDrawerComponent {...props} />}
       screenOptions={{
         headerShown: false,
@@ -77,7 +78,7 @@ function DrawerComponent() {
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Feed">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           options={{
             headerShown: false
